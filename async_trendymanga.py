@@ -37,7 +37,7 @@ class AsyncTrendymanga():
 		async with self.session.post(f"{self.api}/comments",json=data,headers=self.headers) as req:
 			return await req.json()
 	async def comment_list():
-		async with self.session.get(f"{self.api}/comments/title/{title_id}",json=data,headers=self.headers) as req:
+		async with self.session.get(f"{self.api}/comments/title/{title_id}",headers=self.headers) as req:
 			return await req.json()
 	async def reply_comment(self,comment_id,message):
 		data={"titleId":title_id,"text":message}
